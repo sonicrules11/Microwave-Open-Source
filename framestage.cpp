@@ -30,9 +30,10 @@ void hkFrameStage(void* thisptr, ClientFrameStage_t curStage) {
     }
     
     client_vmt->GetOriginalMethod<tFrameStage>(36)(thisptr, curStage);
-    
+    /*
     if (pPunchAngle && pViewAngle) {
         *pPunchAngle = vPunchAngle;
         *pViewAngle = vViewAngle;
+        */
     }
 }
