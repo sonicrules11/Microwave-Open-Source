@@ -151,7 +151,8 @@ void makeshittyesp() {
         
         if(pEntity->GetHealth() < 1)
             continue;
-        
+        if(pEntity->GetArmor()  < 1)
+            continue;
         if(pEntity->GetDormant())
             continue;
         
@@ -175,9 +176,12 @@ void makeshittyesp() {
             if(pEntity->GetTeam() == CounterTerrorist) {
                 DrawBoxOutline(testbox.x, testbox.y, testbox.w, testbox.h, isVisible ? Color::Green() : Color::Blue());
             }
+            /* Draws Health Bar */
             Drawings->DrawHealthbar(testbox.x - 5, testbox.y, 3, testbox.h, pEntity->GetHealth(), Color::Green());
+            /*Draws Armour Bar */
+            Drawings->DrawHealthbar(testbox.x - 10, testbox.y, 3, testbox.h, pEntity->GetArmor(), Color(0, 125, 255, 255));
             Drawings->DrawString(testbox.x + testbox.w / 2, testbox.y - 12/* 12 = the font size */, Color::White(), testfont, true, pInfo.name);
-            DrawSkeleton(pEntity, Color::White());
+            //DrawSkeleton(pEntity, Color::White());
         }
     }
 }
