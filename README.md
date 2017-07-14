@@ -6,6 +6,13 @@ https://github.com/scen/osxinj
 Any issues with the injector? See this:
 https://github.com/vikingmicrowave/Microwave-Open-Source/issues/2
 <hr>
+
+## Info 
+I wont be doing anything else to this project, I was gonna add a skin changer, bhop, and rank reveal but I really dont feel like it. This is a simple ESP if you would like to fork it over go for it. All Credits go to viking and i'm  grateful he made a simple internal cheat.
+
+## Discord
+https://discord.gg/d2AcFQr
+
 #### Signatures:
 
 SDL_GL_PollEvent
@@ -40,13 +47,5 @@ Start: 0x7
 End: 0x4
 
 IDA Style: 55 48 89 E5 48 8D 05 ? ? ? ? 48 89 05 ? ? ? ? E8 B9 FB 3D ? 48 8B 08 48 8B 09
-
-## Ideas
-Skin Changer,
-Config,
-More ESP shit
-
-#### Gitter
-https://gitter.im/Microwave-macOS/Lobby
 
 ##Credits are mentioned on the thread.
