@@ -8,7 +8,7 @@ https://github.com/vikingmicrowave/Microwave-Open-Source/issues/2
 <hr>
 
 ## Info 
-I wont be doing anything else to this project, I was gonna add a skin changer, bhop, and rank reveal but I really dont feel like it. This is a simple ESP if you would like to fork it over go for it. All Credits go to viking and i'm  grateful he made a simple internal cheat.
+https://github.com/sonicrules11/Barbossa (Alot better if you wanna use more than ESP)
 
 ## Discord
 https://discord.gg/d2AcFQr
