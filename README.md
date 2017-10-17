@@ -11,7 +11,7 @@ https://github.com/vikingmicrowave/Microwave-Open-Source/issues/2
 https://github.com/sonicrules11/Barbossa (Alot better if you wanna use more than ESP)
 
 ## Discord
-https://discord.gg/d2AcFQr
+https://discord.gg/tVJhPqH
 
 #### Signatures:
 
