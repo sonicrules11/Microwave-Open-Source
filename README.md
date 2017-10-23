@@ -10,9 +10,6 @@ https://github.com/vikingmicrowave/Microwave-Open-Source/issues/2
 ## Info 
 https://github.com/sonicrules11/Barbossa (Alot better if you wanna use more than ESP)
 
-## Discord
-https://discord.gg/tVJhPqH
-
 #### Signatures:
 
 SDL_GL_PollEvent
