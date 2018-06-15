@@ -1,6 +1,6 @@
-#include "main.hpp"
+#include "main.h"
 
-HFONT testfont;
+HFONT eFont;
 
 void CDrawings::DrawBox(int x, int y, int w, int h, Color color) {
     pSurface->DrawSetColor(color);

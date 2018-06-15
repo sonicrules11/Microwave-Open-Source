@@ -1,4 +1,4 @@
-#include "main.hpp"
+#include "../main.h"
 
 /* 
  
@@ -148,40 +148,37 @@ void makeshittyesp() {
         
         if(!pEntity)
             continue;
-        
         if(pEntity->GetHealth() < 1)
             continue;
         if(pEntity->GetArmor()  < 1)
             continue;
         if(pEntity->GetDormant())
             continue;
-        
         if(pEntity == pLocal)
             continue;
-        
         if(pEntity->GetTeam() != Terrorist && pEntity->GetTeam() != CounterTerrorist)
             continue;
         
-        bBoxStyle testbox;
+        bBoxStyle players;
         
         auto isVisible = TestTrace(pEntity, pLocal);
         
         IEngineClient::player_info_t pInfo;
         pEngine->GetPlayerInfo(i, &pInfo);
         
-        if(DrawPlayerBox(pEntity, testbox)) {
+        if(DrawPlayerBox(pEntity, players)) {
             if(pEntity->GetTeam() == Terrorist) {
-                DrawBoxOutline(testbox.x, testbox.y, testbox.w, testbox.h, isVisible ? Color::Red() : Color::Yellow());
+                DrawBoxOutline(players.x, players.y, players.w, players.h, isVisible ? Color::Red() : Color::Yellow());
             }
             if(pEntity->GetTeam() == CounterTerrorist) {
-                DrawBoxOutline(testbox.x, testbox.y, testbox.w, testbox.h, isVisible ? Color::Green() : Color::Blue());
+                DrawBoxOutline(players.x, players.y, players.w, players.h, isVisible ? Color::Green() : Color::Blue());
             }
-            /* Draws Health Bar */
-            Drawings->DrawHealthbar(testbox.x - 5, testbox.y, 3, testbox.h, pEntity->GetHealth(), Color::Green());
-            /*Draws Armour Bar */
-            Drawings->DrawHealthbar(testbox.x - 10, testbox.y, 3, testbox.h, pEntity->GetArmor(), Color(0, 125, 255, 255));
-            Drawings->DrawString(testbox.x + testbox.w / 2, testbox.y - 12/* 12 = the font size */, Color::White(), testfont, true, pInfo.name);
-            //DrawSkeleton(pEntity, Color::White());
+            /* Draws health bar */
+            Drawings->DrawHealthbar(players.x - 5, players.y, 3, players.h, pEntity->GetHealth(), Color::Green());
+            /* Draws armour bar */
+            Drawings->DrawHealthbar(players.x - 10, players.y, 3, players.h, pEntity->GetArmor(), Color(0, 125, 255, 255));
+            /* Draws player name */
+            Drawings->DrawString(players.x + players.w / 2, players.y - 12, Color::White(), eFont, true, pInfo.name);
         }
     }
 }
@@ -191,30 +188,19 @@ void makeshittyesp() {
 
 void hkPaintTraverse(void* thisptr, VPANEL vguiPanel, bool forceRepaint, bool allowForce) {
     testvmt->GetOriginalMethod<tPaintTraverse>(42)(thisptr, vguiPanel, forceRepaint, allowForce);
-    
     static VPANEL currentPanel = 0;
-    
     if(!currentPanel) {
-        
         if(strstr(pPanel->GetName(vguiPanel), "FocusOverlayPanel")) {
-            
-            testfont = pSurface->CreateFont();
-            pSurface->SetFontGlyphSet(testfont, "Tahoma", 12, 250, 0, 0, FONTFLAG_ANTIALIAS | FONTFLAG_DROPSHADOW);
-            
+            eFont = pSurface->CreateFont();
+            pSurface->SetFontGlyphSet(eFont, "Tahoma", 12, 250, 0, 0, FONTFLAG_ANTIALIAS | FONTFLAG_DROPSHADOW);
             currentPanel = vguiPanel;
-            
         }
     }
     
     if(vguiPanel == currentPanel) {
-    
         /* Draw your stuff here. */
-        makeshittyesp();
-       // DrawBoxOutline(10, 20, 30, 40, Color::Black());
-        
-        /* Test with FontAwesome */
-        Drawings->DrawString(10, 20, Color::White(), testfont, "MicroWave Open-Source BETA.");
-
+        makeshittyesp();      
+        // Watermark  
+        Drawings->DrawString(10, 20, Color::White(), eFont, "MicroWave Open-Source BETA.");
     }
-    
 }

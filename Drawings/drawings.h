@@ -1,4 +1,4 @@
-extern HFONT testfont;
+extern HFONT eFont;
 
 class CDrawings {
 public:

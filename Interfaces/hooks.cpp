@@ -1,4 +1,4 @@
-#include "main.hpp"
+#include "../main.h"
 
 void InitializeInterfaces() {
     pSurface = GetInterface<ISurface>("./bin/osx64/vguimatsurface.dylib", "VGUI_Surface");

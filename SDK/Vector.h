@@ -11,8 +11,6 @@
 
 #define FastSqrt(x)			(sqrt)(x)
 
-#define M_PI		3.14159265358979323846	// matches value in gcc v2 math.h
-
 #define M_PI_F		((float)(M_PI))	// Shouldn't collide with anything.
 
 #define M_PHI		1.61803398874989484820 // golden ratio

@@ -1,18 +1,10 @@
-#include "main.hpp"
+#include "main.h"
 
 int __attribute__((constructor)) Init() {
-    /* do shiz her. */
-    
     InitializeInterfaces();
-    
     InitializeVMTs();
-    
     InitializeHooks();
-    
-    NetVarManager::dumpNetvars();
-    
     Offsets::getOffsets();
-    
     return 0;
 }
 
