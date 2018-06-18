@@ -7,7 +7,9 @@ Macintosh hack for Counter-Strike: Global Offensive. Open source.
 Requirements:
 
 * cmake
-* Shared library injector
+* Shared library injector 
+* [Homebrew](https://brew.sh)
+* [Library injector](https://github.com/scen/osxinj) (I'm suggesting this not saying only this will work I will not explain how to build it)
 
 To generate the project files:
 
@@ -16,5 +18,11 @@ To generate the project files:
 To build:
 
 * **Mac OS**: `make`
- 
+
 Injection can be done by injecting it with your favorite shared library injector.
+* **Example**: `sudo ./osxinj csgo_osx64 libMicrowave.dylib`
+
+### Credit
+
+* ViKiNG (Making Microwave)
+* Akalisch (NetVarManager/PatternScanner)

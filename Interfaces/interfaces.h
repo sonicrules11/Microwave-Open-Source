@@ -9,7 +9,5 @@ extern IVModelInfo* pModelInfo;
 extern IEngineTrace* pEngineTrace;
 extern IClientMode* pClientMode;
 
-
-extern VMT* testvmt;
-extern VMT* client_vmt;
-extern VMT* input_vmt;
+extern VMT* paintVMT;
+extern VMT* clientVMT;

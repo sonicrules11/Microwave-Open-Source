@@ -5,6 +5,7 @@ int __attribute__((constructor)) Init() {
     InitializeVMTs();
     InitializeHooks();
     Offsets::getOffsets();
+    PrintInfo();
     return 0;
 }
 

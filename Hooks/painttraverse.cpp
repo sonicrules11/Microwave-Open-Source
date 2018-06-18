@@ -141,7 +141,7 @@ void DrawSkeleton(C_BaseEntity* pEntity, Color color) {
 /*
 */
 
-void makeshittyesp() {
+void DoESP() {
     C_BaseEntity* pLocal = (C_BaseEntity*)pEntList->GetClientEntity(pEngine->GetLocalPlayer());
     for(int i = 0; i < pEntList->GetHighestEntityIndex(); i++) {
         C_BaseEntity* pEntity = (C_BaseEntity*)pEntList->GetClientEntity(i);
@@ -187,20 +187,19 @@ void makeshittyesp() {
 
 
 void hkPaintTraverse(void* thisptr, VPANEL vguiPanel, bool forceRepaint, bool allowForce) {
-    testvmt->GetOriginalMethod<tPaintTraverse>(42)(thisptr, vguiPanel, forceRepaint, allowForce);
+    paintVMT->GetOriginalMethod<tPaintTraverse>(42)(thisptr, vguiPanel, forceRepaint, allowForce);
     static VPANEL currentPanel = 0;
     if(!currentPanel) {
         if(strstr(pPanel->GetName(vguiPanel), "FocusOverlayPanel")) {
-            eFont = pSurface->CreateFont();
+            eFont = pSurface->CreateFont(); // ESP Font
             pSurface->SetFontGlyphSet(eFont, "Tahoma", 12, 250, 0, 0, FONTFLAG_ANTIALIAS | FONTFLAG_DROPSHADOW);
             currentPanel = vguiPanel;
         }
     }
     
     if(vguiPanel == currentPanel) {
-        /* Draw your stuff here. */
-        makeshittyesp();      
+        DoESP();      
         // Watermark  
-        Drawings->DrawString(10, 20, Color::White(), eFont, "MicroWave Open-Source BETA.");
+        Drawings->DrawString(10, 20, Color::White(), eFont, "Microwave Open-Source BETA.");
     }
 }

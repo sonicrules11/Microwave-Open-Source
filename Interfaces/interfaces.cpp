@@ -11,6 +11,5 @@ IVModelInfo* pModelInfo = nullptr;
 IEngineTrace* pEngineTrace = nullptr;
 IClientMode* pClientMode = nullptr;
 
-VMT* testvmt = nullptr;
-VMT* client_vmt = nullptr;
-VMT* input_vmt = nullptr;
+VMT* paintVMT = nullptr;
+VMT* clientVMT = nullptr;

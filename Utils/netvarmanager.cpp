@@ -43,8 +43,6 @@ int NetVarManager::getOffset(std::vector<RecvTable *> tables, const char *tableN
 	int offset = getProp(tables, tableName, propName);
 	if (!offset)
 		return 0;
-    else
-        pCvar->ConsoleColorPrintf(Color(0, 255, 0, 255), "Found: %s ~ > 0x%X\n", propName, offset);
 
 	return offset;
 }

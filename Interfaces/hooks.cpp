@@ -14,16 +14,20 @@ void InitializeInterfaces() {
 
 
 void InitializeVMTs() {
-    testvmt = new VMT(pPanel);
-    client_vmt = new VMT(pClient);
+    paintVMT = new VMT(pPanel);
+    clientVMT = new VMT(pClient);
 }
 
 void InitializeHooks() {
-    testvmt->HookVM((void*)hkPaintTraverse, 42);
-    testvmt->ApplyVMT();
+    paintVMT->HookVM((void*)hkPaintTraverse, 42);
+    paintVMT->ApplyVMT();
     
-    
-    client_vmt->HookVM((void*)hkFrameStage, 36);
-    client_vmt->ApplyVMT();
+    clientVMT->HookVM((void*)hkFrameStage, 36);
+    clientVMT->ApplyVMT();
 }
 
+void PrintInfo() {
+    pCvar->ConsoleColorPrintf(Color::Green(),   "Microwave-Open-Source\n");
+    pCvar->ConsoleColorPrintf(Color::Green(),   "Coded by :\n");
+    pCvar->ConsoleColorPrintf(Color::Yellow(),  "ViKiNG\n");
+}
