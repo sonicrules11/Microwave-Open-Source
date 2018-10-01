@@ -175,8 +175,6 @@ void DoESP() {
             }
             /* Draws health bar */
             Drawings->DrawHealthbar(players.x - 5, players.y, 3, players.h, pEntity->GetHealth(), Color::Green());
-            /* Draws armour bar */
-            Drawings->DrawHealthbar(players.x - 10, players.y, 3, players.h, pEntity->GetArmor(), Color(0, 125, 255, 255));
             /* Draws player name */
             Drawings->DrawString(players.x + players.w / 2, players.y - 12, Color::White(), eFont, true, pInfo.name);
         }
