@@ -110,7 +110,7 @@ auto TestTrace(C_BaseEntity* pEntity, C_BaseEntity* pLocal) -> bool { /* Just a 
     
     return (trace.m_pEnt == pEntity || trace.fraction > 0.99f);
 }
-
+/*
 void DrawSkeleton(C_BaseEntity* pEntity, Color color) {
     studiohdr_t* pStudioModel = pModelInfo->GetStudioModel( pEntity->GetModel() );
     if ( pStudioModel ) {
@@ -137,7 +137,7 @@ void DrawSkeleton(C_BaseEntity* pEntity, Color color) {
         }
     }
 }
-
+*/
 /*
 */
 
