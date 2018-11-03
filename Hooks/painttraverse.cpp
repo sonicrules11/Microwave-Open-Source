@@ -110,7 +110,7 @@ auto TestTrace(C_BaseEntity* pEntity, C_BaseEntity* pLocal) -> bool { /* Just a 
     
     return (trace.m_pEnt == pEntity || trace.fraction > 0.99f);
 }
-/*
+
 void DrawSkeleton(C_BaseEntity* pEntity, Color color) {
     studiohdr_t* pStudioModel = pModelInfo->GetStudioModel( pEntity->GetModel() );
     if ( pStudioModel ) {
@@ -137,7 +137,6 @@ void DrawSkeleton(C_BaseEntity* pEntity, Color color) {
         }
     }
 }
-*/
 /*
 */
 
@@ -152,12 +151,12 @@ void DoESP() {
             continue;
         if(pEntity->GetTeam() == pLocal->GetTeam())
             continue;
-        if(pEntity->GetDormant())
+        if(pEntity->IsDormant())
+            continue;
+        if(pEntity->IsGhost())
             continue;
         if(pEntity == pLocal)
             continue;
-        /*if(pEntity->GetTeam() != Terrorist && pEntity->GetTeam() != CounterTerrorist)
-            continue; */
         
         bBoxStyle players;
         
@@ -167,12 +166,14 @@ void DoESP() {
         pEngine->GetPlayerInfo(i, &pInfo);
         
         if(DrawPlayerBox(pEntity, players)) {
-            if(pEntity->GetTeam() == Terrorist) {
+            if(pEntity->GetTeam() == Terrorist) { // Draw box ESP on T
                 DrawBoxOutline(players.x, players.y, players.w, players.h, isVisible ? Color::Red() : Color::Yellow());
             }
-            if(pEntity->GetTeam() == CounterTerrorist) {
+            if(pEntity->GetTeam() == CounterTerrorist) { // Draw box ESP on CT
                 DrawBoxOutline(players.x, players.y, players.w, players.h, isVisible ? Color::Green() : Color::Blue());
             }
+            /* Draw Skeleton */
+            DrawSkeleton(pEntity, Color::White());
             /* Draws health bar */
             Drawings->DrawHealthbar(players.x - 5, players.y, 3, players.h, pEntity->GetHealth(), Color::Green());
             /* Draws player name */

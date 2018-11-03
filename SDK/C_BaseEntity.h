@@ -129,7 +129,7 @@ public:
         return *(int*)((uintptr_t)this + offsets.DT_BaseEntity.m_iTeamNum);
     }
     
-    bool GetDormant()
+    bool IsDormant()
     {
         return *(bool*)((uintptr_t)this + 0x121);
     }
@@ -214,10 +214,14 @@ public:
         return *(bool*)((uintptr_t)this + offsets.DT_CSPlayer.m_bIsRescuing);
     }
     
-    bool GetImmune()
+    bool IsImmune()
     {
         return *(bool*)((uintptr_t)this + offsets.DT_CSPlayer.m_bGunGameImmunity);
     }
+    
+    bool IsGhost() {
+        return *(bool*)((uintptr_t)this + offsets.DT_CSPlayer.m_bIsPlayerGhost);
+    }    
     
     Vector GetBonePosition(int boneIndex)
     {

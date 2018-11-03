@@ -103,6 +103,7 @@ struct COffsets
 		int m_bIsGrabbingHostage;
 		int m_bIsScoped;
 		int m_bGunGameImmunity;
+		int m_bIsPlayerGhost;
 		int m_bIsRescuing;
 		int m_bHasHelmet;
 		int m_flFlashDuration;
