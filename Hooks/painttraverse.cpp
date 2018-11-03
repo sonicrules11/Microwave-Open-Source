@@ -150,14 +150,14 @@ void DoESP() {
             continue;
         if(pEntity->GetHealth() < 1)
             continue;
-        if(pEntity->GetArmor()  < 1)
+        if(pEntity->GetTeam() == pLocal->GetTeam())
             continue;
         if(pEntity->GetDormant())
             continue;
         if(pEntity == pLocal)
             continue;
-        if(pEntity->GetTeam() != Terrorist && pEntity->GetTeam() != CounterTerrorist)
-            continue;
+        /*if(pEntity->GetTeam() != Terrorist && pEntity->GetTeam() != CounterTerrorist)
+            continue; */
         
         bBoxStyle players;
         
