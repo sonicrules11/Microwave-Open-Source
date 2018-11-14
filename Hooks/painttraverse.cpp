@@ -1,5 +1,6 @@
 #include "../main.h"
-
+// Index IDs
+#include "index.h"
 /* 
  
  To mention, since we don't have SDL2 added.. YET, we are simply
@@ -186,7 +187,7 @@ void DoESP() {
 
 
 void hkPaintTraverse(void* thisptr, VPANEL vguiPanel, bool forceRepaint, bool allowForce) {
-    paintVMT->GetOriginalMethod<tPaintTraverse>(42)(thisptr, vguiPanel, forceRepaint, allowForce);
+    paintVMT->GetOriginalMethod<tPaintTraverse>(PaintTraverseIndex)(thisptr, vguiPanel, forceRepaint, allowForce);
     static VPANEL currentPanel = 0;
     if(!currentPanel) {
         if(strstr(pPanel->GetName(vguiPanel), "FocusOverlayPanel")) {
