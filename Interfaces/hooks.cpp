@@ -1,4 +1,6 @@
 #include "../main.h"
+// Index IDs
+#include "../Hooks/index.h"
 
 void InitializeInterfaces() {
     pSurface = GetInterface<ISurface>("./bin/osx64/vguimatsurface.dylib", "VGUI_Surface");
@@ -18,7 +20,7 @@ void InitializeVMTs() {
 }
 
 void InitializeHooks() {
-    paintVMT->HookVM((void*)hkPaintTraverse, 42);
+    paintVMT->HookVM((void*)hkPaintTraverse, PaintTraverseIndex);
     paintVMT->ApplyVMT();
 }
 
