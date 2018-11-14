@@ -15,15 +15,11 @@ void InitializeInterfaces() {
 
 void InitializeVMTs() {
     paintVMT = new VMT(pPanel);
-    clientVMT = new VMT(pClient);
 }
 
 void InitializeHooks() {
     paintVMT->HookVM((void*)hkPaintTraverse, 42);
     paintVMT->ApplyVMT();
-    
-    clientVMT->HookVM((void*)hkFrameStage, 37);
-    clientVMT->ApplyVMT();
 }
 
 void PrintInfo() {

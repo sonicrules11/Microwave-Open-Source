@@ -12,4 +12,3 @@ IEngineTrace* pEngineTrace = nullptr;
 IClientMode* pClientMode = nullptr;
 
 VMT* paintVMT = nullptr;
-VMT* clientVMT = nullptr;

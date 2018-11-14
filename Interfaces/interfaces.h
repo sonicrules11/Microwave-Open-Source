@@ -10,4 +10,3 @@ extern IEngineTrace* pEngineTrace;
 extern IClientMode* pClientMode;
 
 extern VMT* paintVMT;
-extern VMT* clientVMT;
