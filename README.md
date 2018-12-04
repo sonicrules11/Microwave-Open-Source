@@ -19,6 +19,8 @@ To build:
 
 * **Mac OS**: `make`
 
+Note: You can generate the project files with `cmake -G Xcode .`
+
 Injection can be done by injecting it with your favorite shared library injector.
 * **Example**: `sudo ./osxinj csgo_osx64 libMicrowave.dylib`
 
