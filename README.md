@@ -18,7 +18,7 @@ To build:
 
 * **Mac OS**: `make`
 
-Note: You can generate the project files with `cmake -G Xcode .`
+Note: You can also generate the project files with `cmake -G Xcode .`
 
 Injection can be done by injecting it with your favorite shared library injector.
 
